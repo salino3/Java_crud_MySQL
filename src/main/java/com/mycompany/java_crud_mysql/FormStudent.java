@@ -17,9 +17,16 @@ public class FormStudent extends javax.swing.JFrame {
     public FormStudent() {
         initComponents();
         
+        this.setLocationRelativeTo(null);
+        txtId.setEnabled(false);
+        
+        
+        
         Conexion objConnection = new Conexion();
         objConnection.establishConnection();
         
+        Students objStudents = new Students();
+        objStudents.ShowStudents(tableStudents);
         
     }
 
@@ -64,6 +71,11 @@ public class FormStudent extends javax.swing.JFrame {
         });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
 
@@ -130,6 +142,11 @@ public class FormStudent extends javax.swing.JFrame {
 
             }
         ));
+        tableStudents.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableStudentsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableStudents);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -180,7 +197,18 @@ public class FormStudent extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         Students objStudent = new Students();
         objStudent.InsertStudent(txtName, txtSurnames);
+        objStudent.ShowStudents(tableStudents);
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void tableStudentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableStudentsMouseClicked
+          Students objStudent = new Students();
+        objStudent.SelectStudent(tableStudents, txtId, txtName, txtSurnames);
+        
+    }//GEN-LAST:event_tableStudentsMouseClicked
 
     /**
      * @param args the command line arguments
