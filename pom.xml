@@ -10,4 +10,13 @@
         <maven.compiler.release>22</maven.compiler.release>
         <exec.mainClass>com.mycompany.java_crud_mysql.Java_crud_MySQL</exec.mainClass>
     </properties>
+    
+    <dependencies>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.35</version> 
+    </dependency>
+</dependencies>
 </project>
+

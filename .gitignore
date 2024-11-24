@@ -2,18 +2,13 @@
 target/
 build/
 
-# Archivos de configuración de NetBeans
 .nbproject/
-
-# Archivos de log
+.env
 *.log
 
-# Archivos temporales
 *.tmp
 
-# Archivos de clases compiladas
 *.class
 
-# Directorios de dependencias de Maven o Gradle
 .m2/
 .gradle/
