@@ -17,15 +17,15 @@ public class Conexion {
     private Connection connection = null;
     
     // Cargar las variables de entorno
-    private Dotenv dotenv = Dotenv.load();
+    public Dotenv dotenv = Dotenv.load();
     
-    private String user = dotenv.get("DB_USER");   
-    private String password = dotenv.get("DB_PASSWORD"); 
-    private String db = dotenv.get("DB_NAME");   
-    private String host = dotenv.get("DB_HOST");  
-    private String port = dotenv.get("DB_PORT");
+    public String user = dotenv.get("DB_USER");   
+    public String password = dotenv.get("DB_PASSWORD"); 
+    public String db = dotenv.get("DB_NAME");   
+    public String host = dotenv.get("DB_HOST");  
+    public String port = dotenv.get("DB_PORT");
     
-    private String chain = "jdbc:mysql://" + host + ":" + port + "/" + db;
+    public String chain = "jdbc:mysql://" + host + ":" + port + "/" + db;
     
     public Connection  establishConnection () {
         try {

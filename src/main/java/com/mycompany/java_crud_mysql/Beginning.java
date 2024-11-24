@@ -11,8 +11,10 @@ package com.mycompany.java_crud_mysql;
 public class Beginning {
     
    public static void main (String[] args)  {
-       FormStudent  objForm = new FormStudent();
-       objForm.setVisible(true);
+       
+       /* Connct to database */
+       /* FormStudent  objForm = new FormStudent();
+       objForm.setVisible(true); */
    }
             
            

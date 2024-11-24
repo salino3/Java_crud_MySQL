@@ -4,6 +4,10 @@
  */
 package com.mycompany.java_crud_mysql;
 
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+ import java.sql.CallableStatement;
+
 /**
  *
  * @author flavi
@@ -38,7 +42,29 @@ public class Students {
         this.surnames = surnames;
     }
     
- public void InsertStudent() {
+ public void InsertStudent(JTextField variableName,JTextField variableSurnames) {
+     
+     setName(variableName.getText());
+     setSurnames(variableSurnames.getText());
+     
+     Conexion objConnection = new Conexion();
+     
+     String consult = ("insert into students(name, surnames) values (?, ? );");
+     
+     try {
+            CallableStatement cs = objConnection.establishConnection().prepareCall(consult);
+         
+          cs.setString(1, getName());
+            cs.setString(2, getSurnames());
+         
+         cs.execute();
+         
+           JOptionPane.showConfirmDialog(null, "Student registered!");
+            
+     } catch (Exception e) {
+                  JOptionPane.showConfirmDialog(null,  "Erro registring student, error. " + e.toString());
+
+     }
      
  }
     
