@@ -38,7 +38,9 @@ public class Students {
         this.surnames = surnames;
     }
     
- 
+ public void InsertStudent() {
+     
+ }
     
     
 }

@@ -11,6 +11,7 @@ package com.mycompany.java_crud_mysql;
 public class Java_crud_MySQL {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+         FormStudent  objForm = new FormStudent();
+       objForm.setVisible(true); 
     }
 }
